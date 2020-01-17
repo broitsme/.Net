@@ -1,0 +1,33 @@
+Imports System
+
+Public Class Program
+    Class Cal
+        Public Function addition(ByVal a As Double, ByVal b As Double) As Double
+            Return a + b
+        End Function
+
+        Public Function subtraction(ByVal a As Double, ByVal b As Double) As Double
+            Return a - b
+        End Function
+
+        Public Function multiply(ByVal a As Double, ByVal b As Double) As Double
+            Return a * b
+        End Function
+
+        Public Function divide(ByVal a As Double, ByVal b As Double) As Double
+            If b = 0 Then
+                Console.Write("divisor can't be zero")
+            End If
+
+            Return a / b
+        End Function
+    End Class
+
+    Public Shared Sub Main()
+        Dim cal As Cal = New Cal()
+        Console.WriteLine(cal.addition(1, 2))
+        Console.WriteLine(cal.subtraction(1, 2))
+        Console.WriteLine(cal.multiply(1, 2))
+        Console.WriteLine(cal.divide(1, 2))
+    End Sub
+End Class
