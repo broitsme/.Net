@@ -1,0 +1,193 @@
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class public auto ansi Program
+    extends [mscorlib]System.Object
+{
+    // Nested Types
+    .class nested public auto ansi Cal
+        extends [mscorlib]System.Object
+    {
+        // Methods
+        .method public specialname rtspecialname 
+            instance void .ctor () cil managed 
+        {
+            // Method begins at RVA 0x2050
+            // Code size 7 (0x7)
+            .maxstack 8
+
+            IL_0000: ldarg.0
+            IL_0001: call instance void [mscorlib]System.Object::.ctor()
+            IL_0006: ret
+        } // end of method Cal::.ctor
+
+        .method public 
+            instance float64 addition (
+                float64 a,
+                float64 b
+            ) cil managed 
+        {
+            // Method begins at RVA 0x20e4
+            // Code size 9 (0x9)
+            .maxstack 2
+            .locals init (
+                [0] float64
+            )
+
+            IL_0000: nop
+            IL_0001: ldarg.1
+            IL_0002: ldarg.2
+            IL_0003: add
+            IL_0004: stloc.0
+            IL_0005: br.s IL_0007
+
+            IL_0007: ldloc.0
+            IL_0008: ret
+        } // end of method Cal::addition
+
+        .method public 
+            instance float64 subtraction (
+                float64 a,
+                float64 b
+            ) cil managed 
+        {
+            // Method begins at RVA 0x20fc
+            // Code size 9 (0x9)
+            .maxstack 2
+            .locals init (
+                [0] float64
+            )
+
+            IL_0000: nop
+            IL_0001: ldarg.1
+            IL_0002: ldarg.2
+            IL_0003: sub
+            IL_0004: stloc.0
+            IL_0005: br.s IL_0007
+
+            IL_0007: ldloc.0
+            IL_0008: ret
+        } // end of method Cal::subtraction
+
+        .method public 
+            instance float64 multiply (
+                float64 a,
+                float64 b
+            ) cil managed 
+        {
+            // Method begins at RVA 0x2114
+            // Code size 9 (0x9)
+            .maxstack 2
+            .locals init (
+                [0] float64
+            )
+
+            IL_0000: nop
+            IL_0001: ldarg.1
+            IL_0002: ldarg.2
+            IL_0003: mul
+            IL_0004: stloc.0
+            IL_0005: br.s IL_0007
+
+            IL_0007: ldloc.0
+            IL_0008: ret
+        } // end of method Cal::multiply
+
+        .method public 
+            instance float64 divide (
+                float64 a,
+                float64 b
+            ) cil managed 
+        {
+            // Method begins at RVA 0x212c
+            // Code size 38 (0x26)
+            .maxstack 2
+            .locals init (
+                [0] float64,
+                [1] bool
+            )
+
+            IL_0000: nop
+            IL_0001: ldarg.2
+            IL_0002: ldc.r8 0.0
+            IL_000b: ceq
+            IL_000d: stloc.1
+            // sequence point: hidden
+            IL_000e: ldloc.1
+            IL_000f: brfalse.s IL_001d
+
+            IL_0011: ldstr "divisor can't be zero"
+            IL_0016: call void [mscorlib]System.Console::Write(string)
+            IL_001b: nop
+            IL_001c: nop
+
+            IL_001d: nop
+            IL_001e: ldarg.1
+            IL_001f: ldarg.2
+            IL_0020: div
+            IL_0021: stloc.0
+            IL_0022: br.s IL_0024
+
+            IL_0024: ldloc.0
+            IL_0025: ret
+        } // end of method Cal::divide
+
+    } // end of class Cal
+
+
+    // Methods
+    .method public specialname rtspecialname 
+        instance void .ctor () cil managed 
+    {
+        // Method begins at RVA 0x2050
+        // Code size 7 (0x7)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: call instance void [mscorlib]System.Object::.ctor()
+        IL_0006: ret
+    } // end of method Program::.ctor
+
+    .method public static 
+        void Main () cil managed 
+    {
+        // Method begins at RVA 0x2058
+        // Code size 128 (0x80)
+        .maxstack 3
+        .locals init (
+            [0] class Program/Cal
+        )
+
+        IL_0000: nop
+        IL_0001: newobj instance void Program/Cal::.ctor()
+        IL_0006: stloc.0
+        IL_0007: ldloc.0
+        IL_0008: ldc.r8 1
+        IL_0011: ldc.r8 2
+        IL_001a: callvirt instance float64 Program/Cal::addition(float64, float64)
+        IL_001f: call void [mscorlib]System.Console::WriteLine(float64)
+        IL_0024: nop
+        IL_0025: ldloc.0
+        IL_0026: ldc.r8 1
+        IL_002f: ldc.r8 2
+        IL_0038: callvirt instance float64 Program/Cal::subtraction(float64, float64)
+        IL_003d: call void [mscorlib]System.Console::WriteLine(float64)
+        IL_0042: nop
+        IL_0043: ldloc.0
+        IL_0044: ldc.r8 1
+        IL_004d: ldc.r8 2
+        IL_0056: callvirt instance float64 Program/Cal::multiply(float64, float64)
+        IL_005b: call void [mscorlib]System.Console::WriteLine(float64)
+        IL_0060: nop
+        IL_0061: ldloc.0
+        IL_0062: ldc.r8 1
+        IL_006b: ldc.r8 2
+        IL_0074: callvirt instance float64 Program/Cal::divide(float64, float64)
+        IL_0079: call void [mscorlib]System.Console::WriteLine(float64)
+        IL_007e: nop
+        IL_007f: ret
+    } // end of method Program::Main
+
+} // end of class Program
+
