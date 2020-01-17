@@ -1,0 +1,30 @@
+using System;
+					
+public class Program
+{
+	class Cal{
+		public double addition(double a, double b){
+			return a + b;
+		}
+		public double subtraction(double a, double b){
+			return a - b;
+		}
+		public double multiply(double a, double b){
+			return a * b;
+		}
+		public double divide(double a, double b){
+			if(b == 0){
+			Console.Write("divisor can't be zero");
+			}
+			return a / b;
+		}
+	}
+	public static void Main()
+	{ 	Cal cal = new Cal();
+		Console.WriteLine(cal.addition(1,2));
+	 	Console.WriteLine(cal.subtraction(1,2));
+		Console.WriteLine(cal.multiply(1,2));
+		Console.WriteLine(cal.divide(1,2));
+
+	}
+}
